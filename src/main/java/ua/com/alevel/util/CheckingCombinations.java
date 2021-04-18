@@ -13,13 +13,13 @@ public class CheckingCombinations {
     }
 
     public static List<Integer> getIndexesOfX(Board board){
-        List<Integer> List = new ArrayList<>();
+        List<Integer> indexesOfX = new ArrayList<>();
         for (int i = 0; i < board.getSize()*3; i++) {
            if(board.getSpots().get(i).contains("X")){
-              List.add(i);
+               indexesOfX.add(i);
            }
         }
-        return List;
+        return indexesOfX;
     }
 
     public static boolean Check(List<Integer> indexes) {
