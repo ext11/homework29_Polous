@@ -18,7 +18,7 @@ class CheckingCombinationsTest {
         board.setSpotByNumberOfSpot(String.valueOf(4));
         board.setSpotByNumberOfSpot(String.valueOf(6));
         List<Integer> indexs = CheckingCombinations.getIndexesOfX(board);
-        assertTrue(CheckingCombinations.Check(indexs));
+        assertTrue(CheckingCombinations.checkAllPossibleCombinations(indexs));
 
 
         /*Board board2 = new Board(size);

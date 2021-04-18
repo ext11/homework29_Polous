@@ -22,7 +22,7 @@ public class CheckingCombinations {
         return indexesOfX;
     }
 
-    public static boolean Check(List<Integer> indexes) {
+    public static boolean checkAllPossibleCombinations(List<Integer> indexes) {
         if (checkByDiagonally(indexes)) {
             System.out.println("You win. You have built 3 crosses in a row diagonally");
             return true;
