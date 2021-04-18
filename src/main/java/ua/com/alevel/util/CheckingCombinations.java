@@ -23,23 +23,32 @@ public class CheckingCombinations {
     }
 
     public static boolean Check(List<Integer> indexes) {
-        if ((indexes.contains(0) && (indexes.contains(4)) && (indexes.contains(8)))
-                ||(indexes.contains(2) && (indexes.contains(4)) && (indexes.contains(6)))) {
+        if (checkByDiagonally(indexes)) {
             System.out.println("You win. You have built 3 crosses in a row diagonally");
             return true;
-        } else if (((indexes.contains(0) && (indexes.contains(1)) && (indexes.contains(2))))
-                ||((indexes.contains(3) && (indexes.contains(4)) && (indexes.contains(5))))
-                ||((indexes.contains(6) && (indexes.contains(7)) && (indexes.contains(8)))) ) {
+        } else if ((checkByHorizontally(indexes)) ) {
             System.out.println("You win. You have built 3 crosses in a row horizontally");
             return true;
-        } else if(((indexes.contains(0) && (indexes.contains(3)) && (indexes.contains(6))))
-                ||((indexes.contains(1) && (indexes.contains(4)) && (indexes.contains(7)))
-                ||((indexes.contains(2) && (indexes.contains(5)) && (indexes.contains(8)))))){
+        } else if(checkByVertically(indexes)){
             System.out.println("You win. You have built 3 crosses in a row vertically");
             return true;
         } else{
             System.out.println("Draw");
         }
         return false;
+    }
+    public static boolean checkByDiagonally(List<Integer> indexes){
+        return (indexes.contains(0) && (indexes.contains(4)) && (indexes.contains(8)))
+                || (indexes.contains(2) && (indexes.contains(4)) && (indexes.contains(6)));
+    }
+    public static boolean checkByHorizontally(List<Integer> indexes){
+        return ((indexes.contains(0) && (indexes.contains(1)) && (indexes.contains(2))))
+                || ((indexes.contains(3) && (indexes.contains(4)) && (indexes.contains(5))))
+                || ((indexes.contains(6) && (indexes.contains(7)) && (indexes.contains(8))));
+    }
+    public static boolean checkByVertically(List<Integer> indexes){
+        return ((indexes.contains(0) && (indexes.contains(3)) && (indexes.contains(6))))
+                || ((indexes.contains(1) && (indexes.contains(4)) && (indexes.contains(7)))
+                || ((indexes.contains(2) && (indexes.contains(5)) && (indexes.contains(8)))));
     }
 }
